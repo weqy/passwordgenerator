@@ -2,12 +2,11 @@ import tkinter as tk
 from tkinter import *
 import random
 import string
-from tkvideo import tkvideo
 
 
 root = tk.Tk()
 
-canvas1 = tk.Canvas(root, width=400, height=600, relief='raised')
+canvas1 = tk.Canvas(root, width=400, height=300, relief='raised')
 canvas1.pack()
 
 label1 = tk.Label(root, text='Calculate the Square Root')
@@ -24,7 +23,7 @@ canvas1.create_window(200, 140, window=scale1)  # shows entry in canvas
 scale_val_label = tk.Label(root, textvariable=var1)
 canvas1.create_window(250, 140, window=scale_val_label)
 
-characters = list(string.ascii_letters + string.digits + "!@#$%^&*()")
+characters = list(string.ascii_letters + string.digits + "!@#S%^&*()")
 
 
 def generate_password():
