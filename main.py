@@ -23,7 +23,7 @@ canvas1.create_window(200, 140, window=scale1)  # shows entry in canvas
 scale_val_label = tk.Label(root, textvariable=var1)
 canvas1.create_window(250, 140, window=scale_val_label)
 
-characters = list(string.ascii_letters + string.digits + "!@#S%^&*()")
+characters = list(string.ascii_letters + string.digits + "!@#$%^&*()")
 
 
 def generate_password():
@@ -34,7 +34,8 @@ def generate_password():
         password.append(random.choice(characters))
 
     random.shuffle(password)
-    my_result = ("".join(password))
+    my_replace = [s.replace('$', 'S') for s in password]
+    my_result = ("".join(my_replace))
     label2 = tk.Label(root, text='Your password is: ' + my_result)
     label2.config(font=('helvetica', 10))
     canvas1.create_window(200, 220, window=label2)
